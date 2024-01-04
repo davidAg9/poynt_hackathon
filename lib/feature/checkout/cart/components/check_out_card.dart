@@ -1,12 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:poynt_hackathon/feature/checkout/cart/model/cart.dart';
 
-class CheckoutCard extends StatelessWidget {
+class CheckoutCard extends StatefulWidget {
   const CheckoutCard({
     Key? key,
   }) : super(key: key);
 
   @override
+  State<CheckoutCard> createState() => _CheckoutCardState();
+}
+
+class _CheckoutCardState extends State<CheckoutCard> {
+  double get totalPrice {
+    double total = 0.0;
+    for (var element in demoCart) {
+      total += element.product.price * element.numOfItem;
+      print(element.product.price);
+    }
+    return total;
+  }
+
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(
@@ -51,18 +65,18 @@ class CheckoutCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text.rich(
+                Text.rich(
                   TextSpan(
                     text: "Total:\n",
                     children: [
                       TextSpan(
-                        text: "\$337.15",
-                        style: TextStyle(
+                        text: totalPrice.toString(),
+                        style: const TextStyle(
                             fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     color: Colors.black,
                   ),

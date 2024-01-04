@@ -49,15 +49,49 @@ class CartCard extends StatelessWidget {
               maxLines: 2,
             ),
             const SizedBox(height: 10),
-            Text.rich(
-              TextSpan(
-                text: "\$${cart.product.price}",
-                style: const TextStyle(fontWeight: FontWeight.w600, color: Colors.black),
-                children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text.rich(
                   TextSpan(
-                      text: " x${cart.numOfItem}", style: Theme.of(context).textTheme.bodyText1),
-                ],
-              ),
+                    text: "\$${cart.product.price}",
+                    style: const TextStyle(fontWeight: FontWeight.w600, color: Colors.black),
+                    children: [
+                      TextSpan(
+                          text: " x${cart.numOfItem}",
+                          style: Theme.of(context).textTheme.bodyText1),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: 200,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                          height: 25,
+                          width: 25,
+                          decoration: BoxDecoration(
+                            color: Colors.black,
+                            border: Border.all(width: 1, color: Colors.black),
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          child:
+                              const Center(child: Icon(Icons.add, color: Colors.white, size: 20))),
+                      const SizedBox(width: 10),
+                      Container(
+                          height: 25,
+                          width: 25,
+                          decoration: BoxDecoration(
+                            border: Border.all(width: 1, color: Colors.black),
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          child: const Center(
+                              child: Icon(Icons.remove, color: Colors.black, size: 20))),
+                    ],
+                  ),
+                ),
+              ],
             )
           ],
         ),
