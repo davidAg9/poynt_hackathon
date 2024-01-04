@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:poynt_hackathon/feature/checkout/cart/model/cart.dart';
 import 'cart_card.dart';
 
@@ -31,10 +30,13 @@ class _BodyState extends State<Body> {
                 color: const Color(0xFFFFE6E6),
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Row(
+              child: const Row(
                 children: [
-                  const Spacer(),
-                  SvgPicture.asset("assets/icons/Trash.svg"),
+                  Spacer(),
+                  Icon(
+                    Icons.delete_outlined,
+                    color: Colors.red,
+                  ),
                 ],
               ),
             ),

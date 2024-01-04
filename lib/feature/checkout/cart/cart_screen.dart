@@ -10,7 +10,7 @@ class CartScreen extends StatelessWidget {
     return Scaffold(
       appBar: buildAppBar(context),
       body: Body(),
-      bottomNavigationBar:  const CheckoutCard(),
+      bottomNavigationBar: const CheckoutCard(),
     );
   }
 
@@ -28,6 +28,15 @@ class CartScreen extends StatelessWidget {
           ),
         ],
       ),
+      actions: [
+        IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          iconSize: 30,
+          icon: const Icon(Icons.close),
+        ),
+      ],
     );
   }
 }
