@@ -43,6 +43,7 @@ dependencies:
   freezed: ^2.4.6
   dartz: ^0.10.1
   flutter_webview_pro: ^3.0.1+4
+  freezed_annotation: ^2.4.1
 
 dev_dependencies:
   flutter_test:
