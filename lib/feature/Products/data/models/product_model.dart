@@ -15,3 +15,30 @@ class PYProductModel with _$PYProductModel {
 
   factory PYProductModel.fromJson(Map<String, dynamic> json) => _$PYProductModelFromJson(json);
 }
+
+List<PYProductModel> demoProducts = const [
+  PYProductModel(
+    id: "1",
+    name: "Wireless Controller for PS4™",
+    imgUrl: "assets/images/ps4_console_white_1.png",
+    price: 64.99,
+    category: "Gaming",
+    tags: ["ps4", "controller", "gaming"],
+  ),
+  PYProductModel(
+    id: "1",
+    name: "Wireless Controller for PS4™",
+    imgUrl: "assets/images/ps4_console_white_1.png",
+    price: 64.99,
+    category: "Gaming",
+    tags: ["ps4", "controller", "gaming"],
+  ),
+  PYProductModel(
+    id: "1",
+    name: "Wireless Controller for PS4™",
+    imgUrl: "assets/images/ps4_console_white_1.png",
+    price: 64.99,
+    category: "Gaming",
+    tags: ["ps4", "controller", "gaming"],
+  ),
+];
