@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'feature/checkout/cart/cart_screen.dart';
+import 'package:poynt_hackathon/feature/Products/presentation/pages/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: CartScreen(),
+      home: const HomeScreen(),
     );
   }
 }
