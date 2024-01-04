@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:foodly/models/menu.dart';
+import 'package:poynt_hackathon/feature/Products/data/models/menu.dart';
+import 'package:poynt_hackathon/feature/Products/presentation/widgets/menu_category_item.dart';
+import 'package:poynt_hackathon/feature/Products/presentation/widgets/restaruant_categories.dart';
+import 'package:poynt_hackathon/feature/Products/presentation/widgets/restaurant_page_app_bar.dart';
 
-import 'components/menu_category_item.dart';
-import 'components/restaruant_categories.dart';
-import 'components/restaurant_page_app_bar.dart';
 import 'restaurant_info.dart';
 
 class RestaurantPage extends StatefulWidget {
@@ -56,13 +56,11 @@ class _RestaurantPageState extends State<RestaurantPage> {
 
   List<double> breackPoints = [];
   void createBreackPoints() {
-    double firstBreakPoint =
-        restaurantInfoHeight + 50 + (116 * demoCategoryMenus[0].items.length);
+    double firstBreakPoint = restaurantInfoHeight + 50 + (116 * demoCategoryMenus[0].items.length);
     breackPoints.add(firstBreakPoint);
 
     for (var i = 1; i < demoCategoryMenus.length; i++) {
-      double breakpoint =
-          breackPoints.last + 50 + (116 * demoCategoryMenus[i].items.length);
+      double breakpoint = breackPoints.last + 50 + (116 * demoCategoryMenus[i].items.length);
       breackPoints.add(breakpoint);
     }
   }
@@ -115,8 +113,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
             sliver: SliverList(
               delegate: SliverChildBuilderDelegate(
                 (context, categoryIndex) {
-                  final List<Menu> items =
-                      demoCategoryMenus[categoryIndex].items;
+                  final List<Menu> items = demoCategoryMenus[categoryIndex].items;
                   return MenuCategoryItem(
                     title: demoCategoryMenus[categoryIndex].category,
                     items: List.generate(

@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
-
-import '../models/menu.dart';
+import 'package:poynt_hackathon/feature/Products/data/models/menu.dart';
 
 class RestaurantCategories extends SliverPersistentHeaderDelegate {
   final ValueChanged<int> onChanged;
   final int selectedCategoryInxed;
 
-  RestaurantCategories(
-      {required this.onChanged, required this.selectedCategoryInxed});
+  RestaurantCategories({required this.onChanged, required this.selectedCategoryInxed});
   @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
       decoration: BoxDecoration(color: Colors.white, boxShadow: [
         BoxShadow(
@@ -97,10 +94,7 @@ class _CategoriesState extends State<Categories> {
                 //   duration: const Duration(milliseconds: 200),
                 // );
               },
-              style: TextButton.styleFrom(
-                  primary: widget.selectedIndex == index
-                      ? Colors.black
-                      : Colors.black45),
+              style: TextButton.styleFrom(foregroundColor: widget.selectedIndex == index ? Colors.black : Colors.black45),
               child: Text(
                 demoCategoryMenus[index].category,
                 style: const TextStyle(fontSize: 20),
