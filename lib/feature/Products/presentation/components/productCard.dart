@@ -26,7 +26,7 @@ class ProductCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15),
               ),
               child: CachedNetworkImage(
-                  imageUrl: productModel.imgUrl,
+                  imageUrl: productModel.image,
                   progressIndicatorBuilder: (context, url, downloadProgress) => Shimmer(
                         gradient: const LinearGradient(
                           colors: [Colors.red, Colors.yellow],
@@ -57,7 +57,7 @@ class ProductCard extends StatelessWidget {
             )
           ],
         ),
-        Spacer(),
+        const Spacer(),
         GestureDetector(
           onTap: () {},
           child: Container(

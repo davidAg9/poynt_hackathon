@@ -7,9 +7,10 @@ class PYProductModel with _$PYProductModel {
   const factory PYProductModel({
     required String id,
     required String name,
-    required String imgUrl,
+    required String description,
+    required String image,
     required double price,
-    required String category,
+    String? category,
     required List<String> tags,
   }) = _PYProductModel;
 
@@ -20,7 +21,8 @@ List<PYProductModel> demoProducts = const [
   PYProductModel(
     id: "1",
     name: "Wireless Controller for PS4™",
-    imgUrl: "https://i.pinimg.com/564x/27/2c/f4/272cf4ef29bee2e734457c999a2ee3fe.jpg",
+    image: "https://i.pinimg.com/564x/27/2c/f4/272cf4ef29bee2e734457c999a2ee3fe.jpg",
+    description: "",
     price: 64.99,
     category: "Gaming",
     tags: ["ps4", "controller", "gaming"],
@@ -28,7 +30,8 @@ List<PYProductModel> demoProducts = const [
   PYProductModel(
     id: "1",
     name: "Wireless Controller for PS4™",
-    imgUrl: "https://i.pinimg.com/564x/27/2c/f4/272cf4ef29bee2e734457c999a2ee3fe.jpg",
+    image: "https://i.pinimg.com/564x/27/2c/f4/272cf4ef29bee2e734457c999a2ee3fe.jpg",
+    description: "",
     price: 64.99,
     category: "Gaming",
     tags: ["ps4", "controller", "gaming"],
@@ -36,7 +39,8 @@ List<PYProductModel> demoProducts = const [
   PYProductModel(
     id: "1",
     name: "Wireless Controller for PS4™",
-    imgUrl: "https://i.pinimg.com/564x/27/2c/f4/272cf4ef29bee2e734457c999a2ee3fe.jpg",
+    image: "https://i.pinimg.com/564x/27/2c/f4/272cf4ef29bee2e734457c999a2ee3fe.jpg",
+    description: "",
     price: 64.99,
     category: "Gaming",
     tags: ["ps4", "controller", "gaming"],
@@ -44,7 +48,8 @@ List<PYProductModel> demoProducts = const [
   PYProductModel(
     id: "1",
     name: "Wireless Controller for PS4™",
-    imgUrl: "https://i.pinimg.com/564x/27/2c/f4/272cf4ef29bee2e734457c999a2ee3fe.jpg",
+    image: "https://i.pinimg.com/564x/27/2c/f4/272cf4ef29bee2e734457c999a2ee3fe.jpg",
+    description: "",
     price: 64.99,
     category: "Gaming",
     tags: ["ps4", "controller", "gaming"],

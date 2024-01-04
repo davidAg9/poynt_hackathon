@@ -1,0 +1,25 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Black shoes",
+      "price": 12.9,
+      "description": "A description",
+      "image": "https://img.app/1.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Red shoes",
+      "price": 12.9,
+      "description": "A description",
+      "image": "https://img.app/1.jpg"
+    },
+    {
+      "id": 1,
+      "name": "White shoes",
+      "price": 12.9,
+      "description": "A description",
+      "image": "https://img.app/1.jpg"
+    }
+  ]
+}
