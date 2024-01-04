@@ -20,7 +20,7 @@ List<PYProductModel> demoProducts = const [
   PYProductModel(
     id: "1",
     name: "Wireless Controller for PS4™",
-    imgUrl: "assets/images/ps4_console_white_1.png",
+    imgUrl: "https://i.pinimg.com/564x/27/2c/f4/272cf4ef29bee2e734457c999a2ee3fe.jpg",
     price: 64.99,
     category: "Gaming",
     tags: ["ps4", "controller", "gaming"],
@@ -28,7 +28,7 @@ List<PYProductModel> demoProducts = const [
   PYProductModel(
     id: "1",
     name: "Wireless Controller for PS4™",
-    imgUrl: "assets/images/ps4_console_white_1.png",
+    imgUrl: "https://i.pinimg.com/564x/27/2c/f4/272cf4ef29bee2e734457c999a2ee3fe.jpg",
     price: 64.99,
     category: "Gaming",
     tags: ["ps4", "controller", "gaming"],
@@ -36,7 +36,7 @@ List<PYProductModel> demoProducts = const [
   PYProductModel(
     id: "1",
     name: "Wireless Controller for PS4™",
-    imgUrl: "assets/images/ps4_console_white_1.png",
+    imgUrl: "https://i.pinimg.com/564x/27/2c/f4/272cf4ef29bee2e734457c999a2ee3fe.jpg",
     price: 64.99,
     category: "Gaming",
     tags: ["ps4", "controller", "gaming"],
@@ -44,7 +44,7 @@ List<PYProductModel> demoProducts = const [
   PYProductModel(
     id: "1",
     name: "Wireless Controller for PS4™",
-    imgUrl: "assets/images/ps4_console_white_1.png",
+    imgUrl: "https://i.pinimg.com/564x/27/2c/f4/272cf4ef29bee2e734457c999a2ee3fe.jpg",
     price: 64.99,
     category: "Gaming",
     tags: ["ps4", "controller", "gaming"],

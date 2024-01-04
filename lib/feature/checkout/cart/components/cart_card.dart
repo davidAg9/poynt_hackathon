@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:poynt_hackathon/feature/checkout/cart/model/cart.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:shimmer/shimmer.dart';
 
 class CartCard extends StatelessWidget {
   const CartCard({
@@ -23,7 +25,17 @@ class CartCard extends StatelessWidget {
                 color: const Color(0xFFF5F6F9),
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Image.asset(cart.product.imgUrl),
+              child: CachedNetworkImage(
+                  imageUrl: cart.product.imgUrl,
+                  progressIndicatorBuilder: (context, url, downloadProgress) => Shimmer(
+                        gradient: const LinearGradient(
+                          colors: [Colors.red, Colors.yellow],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                        loop: 3,
+                        child: Container(),
+                      )),
             ),
           ),
         ),
@@ -51,5 +63,30 @@ class CartCard extends StatelessWidget {
         )
       ],
     );
+  }
+}
+
+class ShimmerCard extends StatelessWidget {
+  const ShimmerCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 200.0,
+      height: 100.0,
+      child: Shimmer.fromColors(
+        baseColor: Colors.red,
+        highlightColor: Colors.yellow,
+        child: const Text(
+          'Shimmer',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 40.0,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+    
   }
 }
