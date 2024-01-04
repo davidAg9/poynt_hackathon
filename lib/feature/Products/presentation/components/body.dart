@@ -3,7 +3,7 @@ import 'package:sizer/sizer.dart';
 
 import 'categories.dart';
 import 'home_header.dart';
-import 'popular_product.dart';
+import 'product_list.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});
@@ -17,9 +17,13 @@ class Body extends StatelessWidget {
             SizedBox(height: 2.h),
             const HomeHeader(),
             SizedBox(height: 1.h),
-            const Categories(),
+            const Categories(
+              categories: [],
+            ),
             SizedBox(height: 3.h),
-            const PopularProducts(),
+            const ProductList(
+              categoryname: 'Popular',
+            ),
             SizedBox(height: 3.h),
           ],
         ),

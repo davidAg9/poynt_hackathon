@@ -5,12 +5,12 @@ import 'package:sizer/sizer.dart';
 class IconBtnWithCounter extends StatelessWidget {
   const IconBtnWithCounter({
     super.key,
-    required this.svgSrc,
+    required this.icon,
     this.numOfitem = 0,
     required this.press,
   });
 
-  final String svgSrc;
+  final IconData icon;
   final int numOfitem;
   final GestureTapCallback press;
 
@@ -24,13 +24,13 @@ class IconBtnWithCounter extends StatelessWidget {
         children: [
           Container(
             padding: EdgeInsets.all(2.sp),
-            height: 4.6.h,
-            width: 4.6.w,
+            height: 12.h,
+            width: 12.w,
             decoration: BoxDecoration(
               color: Colors.green.withOpacity(0.1),
               shape: BoxShape.circle,
             ),
-            child: SvgPicture.asset(svgSrc),
+            child: Icon(icon),
           ),
           if (numOfitem != 0)
             Positioned(

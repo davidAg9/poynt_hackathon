@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:poynt_hackathon/feature/Products/presentation/pages/home_screen.dart';
+import 'package:sizer/sizer.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    Sizer(
+      builder: (context, _, __) => const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -11,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Poynt Hackathon',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

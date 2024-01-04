@@ -3,8 +3,10 @@ import 'package:sizer/sizer.dart';
 
 import 'section_title.dart';
 
-class PopularProducts extends StatelessWidget {
-  const PopularProducts({super.key});
+class ProductList extends StatelessWidget {
+  final String categoryname;
+
+  const ProductList({super.key, required this.categoryname});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,7 @@ class PopularProducts extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 2.w),
-          child: SectionTitle(title: "Popular Products", press: () {}),
+          child: SectionTitle(title: "Products", press: () {}),
         ),
         SizedBox(height: 2.h),
         SingleChildScrollView(
