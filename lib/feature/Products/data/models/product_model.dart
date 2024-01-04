@@ -41,4 +41,12 @@ List<PYProductModel> demoProducts = const [
     category: "Gaming",
     tags: ["ps4", "controller", "gaming"],
   ),
+  PYProductModel(
+    id: "1",
+    name: "Wireless Controller for PS4™",
+    imgUrl: "assets/images/ps4_console_white_1.png",
+    price: 64.99,
+    category: "Gaming",
+    tags: ["ps4", "controller", "gaming"],
+  ),
 ];
