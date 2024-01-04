@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:poynt_hackathon/feature/checkout/cart/model/cart.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:shimmer/shimmer.dart';
+import '../../data/models/product_model.dart';
 
-class CartCard extends StatelessWidget {
-  const CartCard({
+class ProductCard extends StatelessWidget {
+  const ProductCard({
     Key? key,
-    required this.cart,
+    required this.productModel,
   }) : super(key: key);
 
-  final Cart cart;
+  final PYProductModel productModel;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class CartCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15),
               ),
               child: CachedNetworkImage(
-                  imageUrl: cart.product.imgUrl,
+                  imageUrl: productModel.imgUrl,
                   progressIndicatorBuilder: (context, url, downloadProgress) => Shimmer(
                         gradient: const LinearGradient(
                           colors: [Colors.red, Colors.yellow],
@@ -44,26 +44,33 @@ class CartCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              cart.product.name,
+              productModel.name,
               style: const TextStyle(color: Colors.black, fontSize: 16),
               maxLines: 2,
             ),
             const SizedBox(height: 10),
             Text.rich(
               TextSpan(
-                text: "\$${cart.product.price}",
+                text: "\$${productModel.price}",
                 style: const TextStyle(fontWeight: FontWeight.w600, color: Colors.black),
-                children: [
-                  TextSpan(
-                      text: " x${cart.numOfItem}", style: Theme.of(context).textTheme.bodyText1),
-                ],
               ),
             )
           ],
+        ),
+        Spacer(),
+        GestureDetector(
+          onTap: () {},
+          child: Container(
+            height: 40,
+            width: 40,
+            decoration: const BoxDecoration(
+              color: Colors.black,
+              shape: BoxShape.circle,
+            ),
+            child: const Icon(Icons.add, color: Colors.white),
+          ),
         )
       ],
     );
   }
 }
-
-
