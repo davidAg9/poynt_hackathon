@@ -26,7 +26,7 @@ class CartCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15),
               ),
               child: CachedNetworkImage(
-                  imageUrl: cart.product.imgUrl,
+                  imageUrl: cart.product.image,
                   progressIndicatorBuilder: (context, url, downloadProgress) => Shimmer(
                         gradient: const LinearGradient(
                           colors: [Colors.red, Colors.yellow],
@@ -54,8 +54,7 @@ class CartCard extends StatelessWidget {
                 text: "\$${cart.product.price}",
                 style: const TextStyle(fontWeight: FontWeight.w600, color: Colors.black),
                 children: [
-                  TextSpan(
-                      text: " x${cart.numOfItem}", style: Theme.of(context).textTheme.bodyText1),
+                  TextSpan(text: " x${cart.numOfItem}", style: Theme.of(context).textTheme.bodyLarge),
                 ],
               ),
             )
@@ -65,5 +64,3 @@ class CartCard extends StatelessWidget {
     );
   }
 }
-
-

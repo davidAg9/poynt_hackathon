@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -17,11 +18,15 @@ final class DioProductRemoteDataSource implements ProductRemoteDataSource {
   @override
   Future<List<PYProductModel>> getProducts() async {
     try {
-      final res = await _api.get<ProductApiResponse>("/v1/products");
+      final res = await _api.get(
+        "/v1/products",
+      );
       if (res.statusCode == 200) {
         if (res.data != null) {
-          print(res.data!.data);
-          return res.data!.data;
+          log(res.data!.toString());
+          final responseObj = jsonDecode(res.data as String);
+          final apiResponse = ProductApiResponse.fromJson(responseObj as Map<String, dynamic>);
+          return apiResponse.data;
         } else {
           throw ErrorDescription("unable to parse data");
         }
@@ -29,6 +34,8 @@ final class DioProductRemoteDataSource implements ProductRemoteDataSource {
         throw ErrorDescription("unable to get product");
       }
     } catch (e) {
+      log("getProducts error-> ${e.toString()}");
+
       throw ErrorDescription("Something went wrong${e.toString()}");
     }
   }
@@ -41,11 +48,13 @@ final class DioProductRemoteDataSource implements ProductRemoteDataSource {
       if (resp.statusCode == 200) {
         final json = jsonDecode(resp.data) as List<Map<String, dynamic>>;
         final cats = json.map((el) => el["name"] as String).toList();
+        print(cats);
         return cats;
       } else {
         throw ErrorDescription("unable to get categories");
       }
     } catch (e) {
+      log(" getCategories error-> ${e.toString()}");
       throw ErrorDescription("Something went wrong${e.toString()}");
     }
   }

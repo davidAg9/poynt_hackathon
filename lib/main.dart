@@ -6,6 +6,7 @@ import 'package:sizer/sizer.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initializeDependencies();
+
   runApp(
     Sizer(
       builder: (context, _, __) => const MyApp(),
